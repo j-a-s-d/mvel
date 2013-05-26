@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mvel demo</title>
+	<script type="text/javascript" src="./scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="./styles/jquery-ui.min.css"/>
+
+	<script type="text/javascript" src="../mvel.js"></script>
+	<script type="text/javascript" src="../mvel.label.js"></script>
+	<link rel="stylesheet" href="../mvel.css"/>
+	<link rel="stylesheet" href="../mvel.label.css"/>
+	
+	<script type="text/javascript" src="./mvel.demo.js"></script>
+	<link rel="stylesheet" href="./mvel.demo.css"/>
+</head>
+<body>
+	<div id="board"></div>
+	<br/>
+	<div id="toolbar" class="ui-widget-header ui-corner-all">
+		<a id="persistTest" href="#">Persistence Test</a>
+		<button id="addElement">Add Element</button>
+		<ul>
+			<li><a id="addLabel" href="#">Label</a></li>
+			<li class="ui-state-disabled"><a href="#">&nbsp;</a></li>
+			<li><a id="addBox" href="#">Box</a></li>
+			<li><a id="addFrame" href="#">Frame</a></li>
+			<li><a id="addSection" href="#">Section</a></li>
+			<li><a id="addZone" href="#">Zone</a></li>
+		</ul>
+	</div>
+	<br/><br/>
+	<label id="status"></label>
+</body>
+</html>

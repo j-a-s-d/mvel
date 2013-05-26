@@ -1,0 +1,73 @@
+/* mvel - Minimal Visual Elements Library */
+/* 2013 @ Javier Santo Domingo (j-a-s-d@coderesearchlabs.com) */
+/* - */
+/* core library */
+
+.area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: none;
+  padding: 0;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.area-element {
+  position: absolute;
+  background-color: none;
+  padding: 1em;
+}
+
+.area-element:hover {
+  border-color: green;
+}
+
+.area-element-locked {
+
+}
+
+.area-element-resizable {
+
+}
+
+.area-element-operations-handle {
+  float: right;
+  width: 0.8em;
+  margin-top: -1em;
+  margin-right: -1em;
+}
+
+.area-element-operations-handle ul {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.area-element-operations-handle li {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.area-element-operations-handle-menu {
+  margin: 0;
+  padding: 0;
+  z-index: 16777271;
+}
+
+.area-container {
+}
+
+.area-container-content {
+  float: left;
+  width: 100%;
+  height: 100%;
+}

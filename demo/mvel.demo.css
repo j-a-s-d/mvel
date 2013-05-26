@@ -1,0 +1,49 @@
+/* mvel - Minimal Visual Elements Library */
+/* 2013 @ Javier Santo Domingo (j-a-s-d@coderesearchlabs.com) */
+/* - */
+/* demo */
+
+body {
+	font-family: "Segoe UI", "Trebuchet MS", "Ubuntu", Consolas, Verdana, Tahoma, Arial, sans-serif;
+}
+
+#board {
+	position: relative;
+	height: 500px;
+	margin-left: 2.5%;
+	width: 95%;
+	background-color: WhiteSmoke;
+	border: 8px solid YellowGreen;
+}
+
+#toolbar {
+	text-align: center;
+}
+
+.ui-menu {
+	position: absolute;
+	width: 150px;
+	text-align: left;
+	padding: 0;
+	z-index: 16777271;
+}
+
+.area-box {
+  background-color: white;
+  border: 1px solid;
+}
+
+.area-frame {
+  background-color: white;
+  border: 1px dotted;
+}
+
+.area-section {
+  background-color: white;
+  border: 1px dashed;
+}
+
+.area-zone {
+  background-color: white;
+  border: 3px double;
+}

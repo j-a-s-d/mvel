@@ -1,0 +1,16 @@
+/* mvel - Minimal Visual Elements Library */
+/* 2013 @ Javier Santo Domingo (j-a-s-d@coderesearchlabs.com) */
+/* - */
+/* label element */
+
+.area-label {
+	background-color: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.area-label .area-element-operations-handle {
+	margin-top: 0;
+	margin-right: 0;
+}
