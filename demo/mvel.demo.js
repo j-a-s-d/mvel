@@ -35,6 +35,10 @@ $(function() {
 		}, 500);
 	});
 
+	function setContent(aElement, aContent) {
+		mvel.changeContainerContent(aElement, aContent);
+	}
+	
 	function filiateTo(aElement, aNewParent) {
 		mvel.changeElementParent(aElement, aNewParent);
 	}
@@ -45,11 +49,14 @@ $(function() {
 		if (handler != null) {
 			element = handler.create(area, { caption: caption, top: top, left: left });
 		}
+		mvel.bringElementToFront(element);
 		return element;
 	}
 
 	function newContainer(area, top, left, height, width) {
-		return mvel.newAreaContainer(area, top, left, height, width);
+		var element = mvel.newAreaContainer(area, top, left, height, width);
+		mvel.bringElementToFront(element);
+		return element;
 	}
 
 	function newBox(area, top, left, height, width) {
@@ -96,25 +103,49 @@ $(function() {
 		mvel.runAreaElement(area, newZone(area));
 	});
 
+	$("#switchMenuLanguage").button().click(function() {
+		var menu = $(this).next().show().position({
+			my: "left top", at: "left bottom", of: this
+		});
+		$(document).one("click", function() {
+			menu.hide();
+		});
+		return false;
+	}).buttonset().next().hide().menu();
+	$("#setMenuToSpanish").button().click(function(event) {
+		event.preventDefault();
+		mvel.setStrings({
+			toFront: "al frente",
+			toBack: "al fondo",
+			lock: "bloquear",
+			unlock: "desbloquear",
+			remove: "remover"
+		});
+	});
+	$("#setMenuToEnglish").button().click(function(event) {
+		event.preventDefault();
+		mvel.setStrings(null);
+	});
+
 	var aLabel = newLabel(area, "Label");
 	var aBox = newBox(area);
 	aBox.width(100);
 	aBox.height(50);
-	mvel.changeContainerContent(aBox, '<u>Box</u>');
+	setContent(aBox, '<u>Box</u>');
 	var aFrame = newFrame(area);
 	aFrame.width(200);
 	aFrame.height(100);
-	mvel.changeContainerContent(aFrame, '<sup>Frame</sup>');
+	setContent(aFrame, '<sup>Frame</sup>');
 	var aSection = newSection(area);
 	aSection.width(400);
 	aSection.height(200);
-	mvel.changeContainerContent(aSection, '<center><i>Section');
+	setContent(aSection, '<center><i>Section');
 	var aZone = newZone(area, 30, 30, 400, 800);
-	mvel.changeContainerContent(aZone, '<b>Zone</b>');
+	setContent(aZone, '<b>Zone</b>');
 	var aLabel2 = newLabel(area, "Label2", 300, 400);
 	filiateTo(aLabel2, aZone);
 	var aSection2 = newSection(area, 100, 450, 150, 300);
-	mvel.changeContainerContent(aSection2, '<i>Another Section</i>');
+	setContent(aSection2, '<i>Another Section</i>');
 	filiateTo(aSection2, aZone);
 
 	filiateTo(aLabel, aBox);
